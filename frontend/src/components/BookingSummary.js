@@ -1,7 +1,5 @@
-/**
- * Component to display a structured summary of the booking data before final confirmation.
- * @param {Object} data - The collected booking state from the Home component
- */
+// Component to display a structured summary of the booking data before final confirmation.
+
 const BookingSummary = ({ data }) => {
   return (
     <table className="summary-table">

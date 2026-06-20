@@ -70,7 +70,7 @@ const formatLocalDate = (date) => {
 const speak = (text) => {
   if (!text || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
+  const utterance = new SpeechSynthesisUtterance(text);  // create a speech object
   const voices = window.speechSynthesis.getVoices();
   // Uses an Indian-English accent
   utterance.voice = voices.find((v) => v.lang === "en-IN") || voices[0];
@@ -187,7 +187,7 @@ function Home() {
         }
         setAvailableSlots(slots);
         setBookingData((prev) => ({ ...prev, bookingDate: parsed }));
-        const friendlyDate = parsed.toDateString();
+        const friendlyDate = parsed.toDateString();  // Javascript Date object to human readable format 
         // Suggest seating based on weather conditions
         const condition = weather?.condition || weather?.description || "";
         let advice = condition.toLowerCase().includes("rain")
@@ -311,7 +311,7 @@ function Home() {
             <p style={{ color: "#ddd", marginTop: "15px" }}>
               Click to speak with our AI host
             </p>
-          </div>
+          </div>    // landing page complete
         ) : isSuccess ? (
           // Final Success View
           <div
@@ -332,7 +332,7 @@ function Home() {
             >
               Return Home
             </button>
-          </div>
+          </div>    // success page complete
         ) : (
           // Active Voice Interface View
           <div className="assistant-card">
@@ -353,7 +353,7 @@ function Home() {
                   type="email"
                   placeholder="Enter your email address"
                   value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
+                  onChange={(e) => setEmailInput(e.target.value)} // e
                   className="typed-input"
                   style={{ marginBottom: "10px" }}
                 />

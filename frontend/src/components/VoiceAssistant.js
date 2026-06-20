@@ -3,10 +3,8 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-/**
- * Component to handle voice-to-text processing using the browser's Web Speech API
- * @param {Function} onUserMessage - Callback function to process the final transcript
- */
+// Component to handle voice-to-text processing using the browser's Web Speech API
+
 const VoiceAssistant = ({ onUserMessage }) => {
   // Destructuring tools from the hook to manage listening state and text transcripts
   const {
@@ -22,7 +20,7 @@ const VoiceAssistant = ({ onUserMessage }) => {
       onUserMessage(transcript.trim()); // Pass text to the main state machine in Home.js
       resetTranscript(); // Clear the buffer for the next sentence
     }
-  }, [listening, transcript, onUserMessage, resetTranscript]);
+  }, [listening, transcript, onUserMessage, resetTranscript]);  // dependencies array
 
   // Compatibility check for older browsers or non-supported environments
   if (!browserSupportsSpeechRecognition) {
@@ -31,6 +29,7 @@ const VoiceAssistant = ({ onUserMessage }) => {
 
   /**
    * Toggles the microphone state. Configured for en-IN to better recognize Indian accents.
+   * Microphone button logic
    */
   const handleMicClick = () => {
     if (listening) {

@@ -92,7 +92,7 @@ const AdminDashboard = () => {
     datasets: [
       {
         label: "Number of Bookings",
-        data: stats?.popularCuisines?.map((c) => c.count) || [],
+        data: stats?.popularCuisines?.map((c) => c.count) || [], // this data dtermines the height of each bar in the chart
         backgroundColor: "rgba(52, 152, 219, 0.7)",
         borderRadius: 5,
       },

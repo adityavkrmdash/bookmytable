@@ -1,7 +1,5 @@
-/**
- * UI Component to display the AI Assistant's messages
- * @param {string} message - The current text response from the agent
- */
+// UI Component to display the AI Assistant's messages
+
 const AgentBubble = ({ message }) => (
   <div className="agent-bubble">
     <p>

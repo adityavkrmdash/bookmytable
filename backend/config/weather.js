@@ -1,15 +1,6 @@
 // Handles fetching real weather data from OpenWeatherMap API
 // Uses Geocoding API + 5-day forecast API
 
-/**
- * Fetch weather forecast for a given date and location.
- * Uses Geocoding API to get lat/lon, then 5-day forecast API.
- * @param {string} dateString - Booking date (YYYY-MM-DD)
- * @param {string} city - City name (default: Delhi)
- * @param {string} countryCode - Country code (default: IN)
- * @returns {Object} { temperature, condition, description }
- */
-
 import axios from "axios";
 
 export async function getWeatherForDate(

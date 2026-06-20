@@ -75,7 +75,7 @@ export const createBooking = async (req, res) => {
     } = req.body;
 
     // Normalize date to midnight to ensure consistent comparison in DB
-    const targetDate = new Date(bookingDate);
+    const targetDate = new Date(bookingDate); //converts in JavaScript Date object
     targetDate.setHours(0, 0, 0, 0);
 
     // Conflict check: prevent multiple bookings for the same date and time
@@ -135,7 +135,7 @@ export const getAvailableSlots = async (req, res) => {
       "10:00 PM",
     ];
 
-    const targetDate = new Date(date);
+    const targetDate = new Date(date); //converts in JavaScript Date object
     targetDate.setHours(0, 0, 0, 0);
 
     // Retrieve all confirmed bookings for the target day
@@ -246,7 +246,7 @@ export const getAnalytics = async (req, res) => {
       popularCuisines,
       totalBookings,
       // Provide top results directly for frontend cards
-      topCuisine: popularCuisines[0]?._id || "N/A",
+      topCuisine: popularCuisines[0]?._id || "N/A", //gets id of most popular cuisine
       topHour: peakHours[0]?._id || "N/A",
     });
   } catch (error) {
